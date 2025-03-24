@@ -13,9 +13,6 @@ public class SqlUnitOfWork(string connectionString, AppDbContext context) : IUni
 
     public SqlCategoryRepository _categoryRepository;
     public SqlCustomerRepository _customerRepository;
- 
-
-
     public ICategoryRepository CategoryRepository => _categoryRepository ?? new SqlCategoryRepository(_connectionString , _context);
 
     public ICustomerRepository CustomerRepository => _customerRepository ?? new SqlCustomerRepository(_context);
